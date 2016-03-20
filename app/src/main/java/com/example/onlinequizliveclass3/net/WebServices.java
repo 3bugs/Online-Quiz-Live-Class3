@@ -63,6 +63,8 @@ public class WebServices {
                 String jsonResult = response.body().string();
                 Log.d(TAG, jsonResult);
 
+                delay(2);
+
                 try {
                     JSONObject jsonObject = new JSONObject(jsonResult);
                     int success = jsonObject.getInt("success");
@@ -108,5 +110,12 @@ public class WebServices {
         }
     }
 
+    private static void delay(int second) {
+        try {
+            Thread.sleep(second * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
