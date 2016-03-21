@@ -49,6 +49,13 @@ public class QuizListActivity extends AppCompatActivity {
         mErrorMessageTextView = (TextView) findViewById(R.id.error_message);
         mRetryButton = (Button) findViewById(R.id.retry_button);
 
+        mRetryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadQuizzes();
+            }
+        });
+
         mAdapter = new ArrayAdapter<Quiz>(
                 this,
                 R.layout.quiz_item,
